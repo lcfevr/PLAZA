@@ -1,0 +1,5 @@
+node_modules
+proxy.txt
+wallets.json
+wallets-tmp.json
+package-lock.json
