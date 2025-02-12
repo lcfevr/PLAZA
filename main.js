@@ -139,7 +139,11 @@ const main = async () => {
     const proxyList = readProxyFile(proxyPath);
     let index = 0;
     const claimedState = {};
-
+    for (let i = wallets.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wallets[i], wallets[j]] = [wallets[j], wallets[i]];
+        [proxyList[i], proxyList[j]] = [proxyList[j], proxyList[i]];
+    }
     while (true) {
         for (const wallet of wallets) {
             const walletKey = wallet.address.toLowerCase();
